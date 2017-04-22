@@ -1,1 +1,11 @@
-<p>Server component</p>
+<div class="container">
+  <button (click)="handleClick()" class="btn">Display details</button>
+  <ul *ngIf="isLogVisible" class="list-group">
+    <li *ngFor="let item of log; let i = index;" [ngStyle]="{ backgroundColor: i >= 4 ? 'blue' : undefined }"
+        [ngClass]="{ 'last-items' : i >= 4 }"
+        class="list-group-item">{{ item }}
+    </li>
+  </ul>
+</div>
+<!--*ngIf="isLogVisible"-->
+<!--(click)="handleClick()"-->
