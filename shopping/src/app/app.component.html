@@ -1,9 +1,9 @@
 <div class="container">
-  <app-header></app-header>
+  <app-header (openPage)="openPage($event);"></app-header>
   <div class="row">
     <div class="col-md-12">
-      <app-recipes></app-recipes>
-      <app-shopping-list></app-shopping-list>
+      <app-recipes *ngIf="this.page === 'recipes'"></app-recipes>
+      <app-shopping-list *ngIf="this.page === 'shopping-list'"></app-shopping-list>
     </div>
   </div>
 </div>

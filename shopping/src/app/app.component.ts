@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+  page: String = 'recipes';
+
+  openPage(page: String) {
+    this.page = page;
+  }
 }
