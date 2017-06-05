@@ -1,7 +1,6 @@
 import { Recipe } from './recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
 
-
 export class RecipesService {
   recipes: Recipe[] = [
     new Recipe('First recipe',
@@ -24,5 +23,6 @@ export class RecipesService {
   selectRecipe(recipe: Recipe) {
     this.selectedRecipe = recipe;
   }
+
 
 }
