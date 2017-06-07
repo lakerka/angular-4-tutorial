@@ -4,22 +4,23 @@ import { Ingredient } from '../shared/ingredient.model';
 
 
 export class IngredientsService {
-  public onIngredientsChanges: EventEmitter<Ingredient[]> = new EventEmitter<Ingredient[]>();
+  public onIngredientsChange: EventEmitter<Ingredient[]> = new EventEmitter<Ingredient[]>();
   private ingredients: Ingredient[] = [
     new Ingredient('apple', 3),
-    new Ingredient('apple', 3),
+    new Ingredient('fruit', 5),
   ];
 
   getIngredients() {
-    return this.ingredients.splice();
+    return this.ingredients.slice();
   }
 
-  setIngredients(ingredients: Ingredient[]) {
-    this.ingredients = ingredients;
+  addIngredients(ingredients: Ingredient[]) {
+    this.ingredients.push(...ingredients);
+    this.onIngredientsChange.emit(this.getIngredients());
   }
 
-  add(ingredient: Ingredient) {
+  addIngredient(ingredient: Ingredient) {
     this.ingredients.push(ingredient);
+    this.onIngredientsChange.emit(this.getIngredients());
   }
-
 }

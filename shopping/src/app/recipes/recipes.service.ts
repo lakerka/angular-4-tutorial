@@ -1,6 +1,11 @@
+import { Injectable } from '@angular/core'
+
+import { IngredientsService } from '../shopping-list/ingredients.service'
 import { Recipe } from './recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
 
+
+@Injectable()
 export class RecipesService {
   recipes: Recipe[] = [
     new Recipe('First recipe',
@@ -20,9 +25,13 @@ export class RecipesService {
   ];
   selectedRecipe: Recipe;
 
+  constructor(private ingredientsService: IngredientsService) {}
+
   selectRecipe(recipe: Recipe) {
     this.selectedRecipe = recipe;
   }
 
-
+  addToShoppingList(ingredients: Ingredient[]) {
+    this.ingredientsService.addIngredients(ingredients);
+  }
 }
