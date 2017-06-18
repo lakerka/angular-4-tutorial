@@ -11,10 +11,5 @@ import { RecipesService } from './recipes/recipes.service';
   providers: [IngredientsService, RecipesService]
 })
 export class AppComponent {
-  title = 'app works!';
-  page: String = 'recipes';
 
-  openPage(page: String) {
-    this.page = page;
-  }
 }
