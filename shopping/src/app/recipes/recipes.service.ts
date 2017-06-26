@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core'
+ import { Injectable } from '@angular/core'
 
 import { IngredientsService } from '../shopping-list/ingredients.service'
 import { Recipe } from './recipe.model';

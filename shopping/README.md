@@ -1,5 +1,6 @@
 # Shopping
 
+Project follows udemy course [Angular 4 (formerly Angular 2) - The Complete Guide](https://www.udemy.com/the-complete-guide-to-angular-2/learn/v4/).
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
 ## Development server
