@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-xs-12">
     <img [src]="recipe.imagePath"
-    [alt]="recipe.name"
-    class="image-responsive"
-    style="max-width: 90px;">
+         [alt]="recipe.name"
+         class="image-responsive"
+         style="max-width: 90px;">
   </div>
 </div>
 <div class="row">
@@ -13,16 +13,20 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <div appDropdown class="btn-group">
+    <div appDropdown
+         class="btn-group">
       <button type="button"
               class="btn btn-primary dropdown-toggle">
         Manage recipe
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
-        <li><a class="pointer" (click)="sendToShoppingList()">To shopping list</a></li>
-        <li><a class="pointer" routerLink="edit">Edit recipe</a></li>
-        <li><a class="pointer" >Delete recipe</a></li>
+        <li><a class="pointer"
+             (click)="onSendToShoppingList()">To shopping list</a></li>
+        <li><a class="pointer"
+             routerLink="edit">Edit recipe</a></li>
+        <li><a class="pointer"
+             (click)="onDelete()">Delete recipe</a></li>
       </ul>
     </div>
   </div>
@@ -35,7 +39,8 @@
 <div class="row">
   <div class="col-xs-12">
     <ul class="list-group">
-      <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+      <li class="list-group-item"
+          *ngFor="let ingredient of recipe.ingredients">
         {{ ingredient.name }} - {{ ingredient.amount }}
       </li>
     </ul>
