@@ -9,11 +9,15 @@
         <li routerLinkActive="active"><a routerLink="/shopping-list">Shopping list</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li appDropdown class="dropdown">
-          <a class="dropdown-toggle pointer" role="button">Manage <span class="caret"></span></a>
+        <li appDropdown
+            class="dropdown">
+          <a class="dropdown-toggle pointer"
+             role="button">Manage <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a class="pointer">Save data</a></li>
-            <li><a class="pointer">Fetch data</a></li>
+            <li><a class="pointer"
+                 (click)="onSaveData()">Save data</a></li>
+            <li><a class="pointer"
+                 (click)="onFetchData()">Fetch data</a></li>
           </ul>
         </li>
       </ul>

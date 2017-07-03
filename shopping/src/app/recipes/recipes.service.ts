@@ -2,8 +2,9 @@
 
 import { Subject } from 'rxjs/Subject';
 
-import { IngredientsService } from '../shopping-list/ingredients.service'
+import { StorageService } from '../shared/storage.service';
 import { Recipe } from './recipe.model';
+import { IngredientsService } from '../shopping-list/ingredients.service'
 import { Ingredient } from '../shared/ingredient.model';
 
 
@@ -44,6 +45,11 @@ export class RecipesService {
 
   getRecipe(index: number) {
     return this.recipes[index];
+  }
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.onRecipesChanged.next(this.getRecipes());
   }
 
   addToShoppingList(ingredients: Ingredient[]) {

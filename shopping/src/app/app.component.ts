@@ -8,7 +8,6 @@ import { RecipesService } from './recipes/recipes.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [IngredientsService, RecipesService]
 })
 export class AppComponent {
 
