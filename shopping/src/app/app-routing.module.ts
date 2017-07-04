@@ -8,6 +8,8 @@ import { RecipeEditComponent } from "./recipes/recipe-edit/recipe-edit.component
 
 import { ShoppingListComponent }  from "./shopping-list/shopping-list.component";
 
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
 
 
 const appRoutes: Routes = [
@@ -21,24 +23,9 @@ const appRoutes: Routes = [
     ]
   },
 
-  { path: 'shopping-list', component: ShoppingListComponent}
-
-  // { path: '', component: HomeComponent },
-  // { path: 'recipes', component: ServersComponent,
-
-  //   children: [
-  //     { path: ':id', component: ServerComponent, resolve: {server: ServerResolver} },
-  //     // { path: ':id', component: ServerComponent},
-  //     { path: ':id/edit', canDeactivate: [CanDeactivateGuard], component: EditServerComponent },
-  //   ]
-  // },
-  // { path: 'users', component: UsersComponent,
-  //   children: [
-  //     { path: ':id/:name', component: UserComponent },
-  //   ]
-  // },
-  // { path: 'not-found', component: ErrorPageComponent, data: {'message': 'La la la message'} },
-  // { path: '**', redirectTo: '/not-found' },
+  { path: 'shopping-list', component: ShoppingListComponent},
+  { path: 'signup', component: SignupComponent },
+  { path: 'signin', component: SigninComponent },
 ];
 
 @NgModule({

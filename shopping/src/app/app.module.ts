@@ -24,6 +24,11 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { AuthComponent } from './auth/auth.component';
+
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import { AuthService } from './auth/auth.service';
 
 
 @NgModule({
@@ -42,6 +47,9 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     HeaderComponent,
     RecipeStartComponent,
     RecipeEditComponent,
+    AuthComponent,
+    SignupComponent,
+    SigninComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +61,8 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
   providers: [
     StorageService,
     IngredientsService,
-    RecipesService
+    RecipesService,
+    AuthService,
   ],
   bootstrap: [AppComponent]
 })
