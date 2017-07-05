@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Http, URLSearchParams } from '@angular/http';
 
 import * as firebase from 'firebase';
 
-import { IngredientsService } from './shopping-list/ingredients.service';
-import { RecipesService } from './recipes/recipes.service';
+import { AuthService } from './auth/auth.service';
 
 
 @Component({
@@ -12,6 +12,9 @@ import { RecipesService } from './recipes/recipes.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  constructor(private http: Http,
+    private authService: AuthService) {}
+
   ngOnInit() {
     const firebaseConfig = {
       apiKey: 'AIzaSyDYhVhO4o5iR7aEOvSLSMosXctCWa4F6sw',
@@ -19,4 +22,5 @@ export class AppComponent {
     }
     firebase.initializeApp(firebaseConfig);
   }
+
 }

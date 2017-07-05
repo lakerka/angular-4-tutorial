@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { StorageService } from '../shared/storage.service';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,8 @@ import { StorageService } from '../shared/storage.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  constructor(private storageService: StorageService) { }
+  constructor(private storageService: StorageService,
+    private authService: AuthService) { }
 
   ngOnInit() {
   }

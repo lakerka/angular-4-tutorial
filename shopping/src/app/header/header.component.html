@@ -9,26 +9,33 @@
         <li routerLinkActive="active"><a routerLink="/shopping-list">Shopping list</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a routerLinkActive="active"
-             routerLink="/signup">Register</a>
-        </li>
-        <li>
-          <a routerLinkActive="active"
-             routerLink="/signin">Sign in</a>
-        </li>
-
-        <li appDropdown
-            class="dropdown">
-          <a class="dropdown-toggle pointer"
-             role="button">Manage <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a class="pointer"
-                 (click)="onSaveData()">Save data</a></li>
-            <li><a class="pointer"
-                 (click)="onFetchData()">Fetch data</a></li>
-          </ul>
-        </li>
+        <ng-template [ngIf]="!authService.isAuthenticated()">
+          <li>
+            <a routerLinkActive="active"
+               routerLink="/signup">Register</a>
+          </li>
+          <li>
+            <a routerLinkActive="active"
+               routerLink="/signin">Sign in</a>
+          </li>
+        </ng-template>
+        <ng-template [ngIf]="authService.isAuthenticated()">
+          <li>
+            <a routerLink="/"
+               (click)="authService.signOut()">Sign out</a>
+          </li>
+          <li appDropdown
+              class="dropdown">
+            <a class="dropdown-toggle pointer"
+               role="button">Manage <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a class="pointer"
+                   (click)="onSaveData()">Save data</a></li>
+              <li><a class="pointer"
+                   (click)="onFetchData()">Fetch data</a></li>
+            </ul>
+          </li>
+        </ng-template>
       </ul>
     </div>
   </div>
