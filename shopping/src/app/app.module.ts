@@ -10,47 +10,25 @@ import { AppComponent } from './app.component';
 
 import { HeaderComponent } from './header/header.component';
 
-import { DropdownDirective } from './shared/dropdown.directive';
 import { StorageService } from './shared/storage.service';
 
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { SharedModule } from './shared/shared.module';
+
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { IngredientsService } from './shopping-list/ingredients.service';
 
-import { RecipesComponent } from './recipes/recipes.component';
+import { RecipesModule } from './recipes/recipes.module';
 import { RecipesService } from './recipes/recipes.service';
-import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
-import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
-import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
-import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
-import { SignupComponent } from './auth/signup/signup.component';
-import { SigninComponent } from './auth/signin/signin.component';
+import { AuthModule } from './auth/auth.module';
 
-import { AuthComponent } from './auth/auth.component';
 import { AuthService } from './auth/auth.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
-    DropdownDirective,
-
-    ShoppingListComponent,
-    ShoppingEditComponent,
-
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
     HeaderComponent,
-    RecipeStartComponent,
-    RecipeEditComponent,
-    AuthComponent,
-    SignupComponent,
-    SigninComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +36,10 @@ import { AuthService } from './auth/auth.service';
     ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
+    RecipesModule,
+    ShoppingListModule,
+    AuthModule,
+    SharedModule,
   ],
   providers: [
     StorageService,
