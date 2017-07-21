@@ -14,9 +14,6 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes)
   ],
-  providers: [],
   exports: [RouterModule]
 })
-export class AuthRoutingModule {
-
-}
+export class AuthRoutingModule {}

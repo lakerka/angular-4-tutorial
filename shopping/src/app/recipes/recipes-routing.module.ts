@@ -8,7 +8,7 @@ import { RecipeEditComponent } from "./recipe-edit/recipe-edit.component";
 import { AuthGuardService } from '../auth/auth-guard.service';
 
 const recipesRoutes: Routes = [
-  { path: 'recipes', component: RecipesComponent,
+  { path: '', component: RecipesComponent,
     children: [
       { path: '', component: RecipeStartComponent },
       { path: 'new', component: RecipeEditComponent, canActivate: [AuthGuardService]},
@@ -21,7 +21,7 @@ const recipesRoutes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(recipesRoutes)
+    RouterModule.forChild(recipesRoutes)
   ],
   providers: [AuthGuardService],
   exports: [RouterModule]
