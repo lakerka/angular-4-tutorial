@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Http, URLSearchParams } from '@angular/http';
 
 import * as firebase from 'firebase';
-
-import { AuthService } from './auth/auth.service';
 
 
 @Component({
@@ -11,9 +8,7 @@ import { AuthService } from './auth/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  constructor(private http: Http,
-    private authService: AuthService) {}
+export class AppComponent implements OnInit {
 
   ngOnInit() {
     const firebaseConfig = {
